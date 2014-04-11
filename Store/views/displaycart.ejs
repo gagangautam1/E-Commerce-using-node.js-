@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+   Product Catalog: 
+   <br/>
+   <ul>
+   <% for (var i=0; i<items.length; i++) { %>
+ <li>ID: <%= items[i].id%>
+ <br/>
+ ProductName: <%= items[i].name%>
+ <br/>
+ Price: <%= items[i].price%></li>
+   <br/>
+   Quantity: <%items[i].quantity%></li>
+   <% } %>
+   </ul>
+   <form name= "Checkout" action="/Authenticate" method="post">
+   <input id="cart" name="Cart" type="submit"  value="Checkout">
+   <form/>
+    </body>
+</html>

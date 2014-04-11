@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <br/>
+    <form name= "Add To Cart" action="/cart" method="post">
+   Product Catalog: 
+   <br/>
+   <ul>
+   <% for (var i=0; i<items.length; i++) { %>
+ <li>ID: <%= items[i].id%>
+ <br/>
+ ProductName: <%= items[i].name%>
+ <br/>
+ Price: <%= items[i].price%></li>
+  <br/>
+   <% } %>
+   </ul>
+   <br/>
+  Add item details to add in the cart:
+  <br/>
+  <br/>
+  Id: 
+  <input id="id" name="id" type="number" style="width:60px"   />
+  <br/>
+  Product Name:
+  <input id="prod" name="name" type="text" style="width:60px"   />
+  <br/>
+   Quantity:
+  <input id="quantity" name="quant" type="number" style="width:60px"   />
+  <br/>
+  <input id="cart" name="Cart" type="submit"  value="Add to Cart">
+  <input type="hidden" value=<%= user%> name="user"/>
+  </form>
+   <form name= "Display Cart" action="/displaycart" method="post">
+   <input id="cart" name="Cart" type="submit"  value="Display Cart">
+   </form>
+  </body>
+</html>
